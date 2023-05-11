@@ -3,8 +3,6 @@
 // make the divs apppear as a grid
 const DEFAULT_SIZE = 16
 
-console.log('linked stylesheet')
-
 function createGrid (size) {
 
   for (let i = 0; i < size * size; i++) {

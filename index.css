@@ -4,6 +4,8 @@
 */
 :root {
   box-sizing: border-box;
+  --primary-dark: #333;
+  --primary-light: #fbfbfd;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -33,6 +35,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background-color: var(--primary-light);
 }
 ol, ul {
   list-style: none;
@@ -50,10 +53,16 @@ table {
   border-spacing: 0;
 }
 
+.grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .grid-element {
-  width: 8px;
-  height: 8px;
-  background-color: red;
-  border: 1px solid black;
+  user-select: none;
+
+  /* placeholder for easy visualization*/
+  background-color: var(--primary-dark);
 }
