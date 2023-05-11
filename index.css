@@ -62,7 +62,4 @@ table {
 
 .grid-element {
   user-select: none;
-
-  /* placeholder for easy visualization*/
-  background-color: var(--primary-dark);
 }
