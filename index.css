@@ -4,6 +4,8 @@
 */
 :root {
   box-sizing: border-box;
+  
+  /* monokai color scheme ????? */
   --primary-dark: #333;
   --primary-light: #fbfbfd;
 }

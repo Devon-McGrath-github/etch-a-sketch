@@ -20,14 +20,11 @@ function createGrid (size) {
 
 function changeColor (e) {
   if (e.type === 'mouseover' && !mouseDown) return
-  if (mouseDown) {
-    console.log('mousedown true' + mouseDown)
-    // placeholder values for color mode
-    const R = 0
-    const G = 0
-    const B = 0
-    e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`
-  }  
+  // placeholder values for color mode
+  const R = 0
+  const G = 0
+  const B = 0
+  e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`
 }
 
 // variable to track state for mousedown, that can be checked with mouseover eventListener
