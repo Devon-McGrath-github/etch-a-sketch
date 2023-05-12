@@ -1,14 +1,9 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* 
+  Meyer CSS Reset
+  http://meyerweb.com/eric/tools/css/reset/ 
   v2.0 | 20110126
   License: none (public domain)
 */
-:root {
-  box-sizing: border-box;
-  
-  /* monokai color scheme ????? */
-  --primary-dark: #333;
-  --primary-light: #fbfbfd;
-}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,6 +48,16 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* end of meyer css reset */
+
+:root {
+  box-sizing: border-box;
+  
+  /* monokai color scheme ????? */
+  --primary-dark: #333;
+  --primary-light: #fbfbfd;
 }
 
 .grid {

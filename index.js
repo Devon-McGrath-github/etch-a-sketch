@@ -1,9 +1,6 @@
-// Create canvas (default to 16x16 grid)
-// Put divs inside another container div
-// make the divs apppear as a grid
 const DEFAULT_SIZE = 16
 
-// creates pixel grid for Etch-A-Sketch
+// creates pixel grid to serve as Etch-A-Sketch drawing space
 function createGrid (size) {
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
