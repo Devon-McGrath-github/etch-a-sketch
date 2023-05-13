@@ -1,5 +1,7 @@
 const DEFAULT_SIZE = 16
 
+// let currentSize = DEFAULT_SIZE
+
 // creates pixel grid to serve as Etch-A-Sketch drawing space
 function createGrid (size) {
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -9,8 +11,8 @@ function createGrid (size) {
     const gridElement = document.createElement('div')
 
     gridElement.classList.add('grid-element')
-    gridElement.addEventListener("mouseover", changeColor)
-    gridElement.addEventListener("mousedown", changeColor)
+    gridElement.addEventListener('mouseover', changeColor)
+    gridElement.addEventListener('mousedown', changeColor)
     grid.appendChild(gridElement)
   }
 }
@@ -29,20 +31,23 @@ document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
 // retrieve value from slider on input
-const sizeSlider = document.getElementById("grid-slider")
+const sizeSlider = document.getElementById('grid-slider')
 
 sizeSlider.oninput = (e) => changeSize(e.target.value)
 
-
-
-function changeSize (size) {
-
-  sizeValue.innerHTML = `Grid Size: ${size} x ${size}`
-  // refresh grid with new size
+function changeSize (newSize) {
+  // currentSize = newSize
+  sizeValue.innerHTML = `Grid Size: ${newSize} x ${newSize}`
+  refreshGrid(newSize)
 }
 
-// let currentSize = sizeSlider.value
 // refresh grid function goes here
+function refreshGrid (size) {
+  // wipe grid clean
+  grid.innerHTML = ''
+  // rebuild grid with given size
+  createGrid(size)
+}
 
 window.onload = () => {
   createGrid(DEFAULT_SIZE)

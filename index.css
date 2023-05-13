@@ -58,6 +58,7 @@ table {
   /* monokai color scheme ????? */
   --primary-dark: #333;
   --primary-light: #fbfbfd;
+  --secondary-light: #fefefe;
 }
 /* styles for easy sticky footer */
 html, body {
@@ -93,4 +94,5 @@ body > footer {
 
 .grid-element {
   user-select: none;
+  background-color: var(--secondary-light);
 }
