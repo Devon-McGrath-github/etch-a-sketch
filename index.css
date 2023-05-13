@@ -70,7 +70,7 @@ body > footer {
 /* end of sticky footer styling */
 
 /* Header */
-.header {
+.header, footer {
   margin: 0 auto;
   text-align: center;
   padding: 2% 0;
@@ -78,13 +78,16 @@ body > footer {
 
 .content {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 /* grid styling */
 .grid {
   display: grid;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
