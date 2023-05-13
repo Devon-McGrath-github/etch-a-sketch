@@ -23,13 +23,28 @@ function changeColor (e) {
   const B = 0
   e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`
 }
-
 // variable to track state for mousedown, that can be checked with mouseover eventListener
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
+// retrieve value from slider on input
+const sizeSlider = document.getElementById("grid-slider")
+
+sizeSlider.oninput = (e) => changeSize(e.target.value)
+
+
+
+function changeSize (size) {
+
+  sizeValue.innerHTML = `Grid Size: ${size} x ${size}`
+  // refresh grid with new size
+}
+
+// let currentSize = sizeSlider.value
+// refresh grid function goes here
 
 window.onload = () => {
   createGrid(DEFAULT_SIZE)
+  changeSize(DEFAULT_SIZE)
 }
