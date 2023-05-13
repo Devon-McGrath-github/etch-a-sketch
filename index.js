@@ -1,13 +1,16 @@
 const DEFAULT_SIZE = 16
 const DEFAULT_MODE = 'color'
+const DEFAULT_COLOR = '#000'
 
 // variable to track state of mouse click
 let mouseDown = false
 
 let currentSize = DEFAULT_SIZE
 let currentMode = DEFAULT_MODE
+let currentColor = DEFAULT_COLOR
 
 // create variables for page elements
+const colorPicker = document.getElementById('colorPicker')
 const colorButton = document.getElementById('colorBtn')
 const rainbowButton = document.getElementById('rainbowBtn')
 const eraseButton = document.getElementById('eraseBtn')
@@ -15,6 +18,7 @@ const clearButton = document.getElementById('clearBtn')
 const sizeSlider = document.getElementById('grid-slider')
 
 /* function calls for related page element events */
+colorPicker.onchange = (e) => setCurrentColor(e.target.value)
 colorButton.onclick = () => changeMode('color')
 rainbowButton.onclick = () => changeMode('rainbow')
 eraseButton.onclick = () => changeMode('erase')
@@ -45,11 +49,15 @@ function createGrid (size) {
   }
 }
 
+function setCurrentColor (newColor) {
+  currentColor = newColor
+}
+
 // update background color of grid elements on click
 function changeColor (e) {
   if (e.type === 'mouseover' && !mouseDown) return
   if (currentMode === 'color') {
-    e.target.style.backgroundColor = '#000'
+    e.target.style.backgroundColor = currentColor
   } 
   else if (currentMode === 'rainbow') {
     const R = Math.floor(Math.random() * 256);
