@@ -60,6 +60,20 @@ table {
   --primary-light: #fbfbfd;
 }
 
+/* Header */
+.header {
+  margin: 2% auto 0 auto;
+  text-align: center;
+
+}
+
+
+.content {
+  display: flex;
+}
+
+
+/* grid styling */
 .grid {
   display: grid;
   width: 500px;
@@ -70,3 +84,4 @@ table {
 .grid-element {
   user-select: none;
 }
+
