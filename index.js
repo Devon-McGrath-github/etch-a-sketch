@@ -9,12 +9,14 @@ let currentMode = DEFAULT_MODE
 
 // create variables for page elements
 const colorButton = document.getElementById('colorBtn')
+const rainbowButton = document.getElementById('rainbowBtn')
 const eraseButton = document.getElementById('eraseBtn')
 const clearButton = document.getElementById('clearBtn')
 const sizeSlider = document.getElementById('grid-slider')
 
 /* function calls for related page element events */
 colorButton.onclick = () => changeMode('color')
+rainbowButton.onclick = () => changeMode('rainbow')
 eraseButton.onclick = () => changeMode('erase')
 clearButton.onclick = () => refreshGrid(currentSize)
 document.body.onmousedown = () => (mouseDown = true)
@@ -47,11 +49,15 @@ function createGrid (size) {
 function changeColor (e) {
   if (e.type === 'mouseover' && !mouseDown) return
   if (currentMode === 'color') {
-    const R = 0
-    const G = 0
-    const B = 0
+    e.target.style.backgroundColor = '#000'
+  } 
+  else if (currentMode === 'rainbow') {
+    const R = Math.floor(Math.random() * 256);
+    const G = Math.floor(Math.random() * 256);
+    const B = Math.floor(Math.random() * 256);
     e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`
-  } else {
+  }
+  else {
     e.target.style.backgroundColor = '#fefefe'
   }
 }
