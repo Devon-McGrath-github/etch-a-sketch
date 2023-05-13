@@ -59,19 +59,26 @@ table {
   --primary-dark: #333;
   --primary-light: #fbfbfd;
 }
+/* styles for easy sticky footer */
+html, body {
+  height: 100%
+}
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+/* end of sticky footer styling */
 
 /* Header */
 .header {
-  margin: 2% auto 0 auto;
+  margin: 0 auto;
   text-align: center;
-
+  padding: 2% 0;
 }
-
 
 .content {
   display: flex;
 }
-
 
 /* grid styling */
 .grid {
@@ -84,4 +91,3 @@ table {
 .grid-element {
   user-select: none;
 }
-
