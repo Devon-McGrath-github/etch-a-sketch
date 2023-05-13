@@ -14,7 +14,7 @@ const colorPicker = document.getElementById('colorPicker')
 const colorButton = document.getElementById('colorBtn')
 const rainbowButton = document.getElementById('rainbowBtn')
 const eraseButton = document.getElementById('eraseBtn')
-const clearButton = document.getElementById('clearBtn')
+const resetButton = document.getElementById('resetBtn')
 const sizeSlider = document.getElementById('grid-slider')
 
 /* function calls for related page element events */
@@ -22,7 +22,7 @@ colorPicker.onchange = (e) => setCurrentColor(e.target.value)
 colorButton.onclick = () => changeMode('color')
 rainbowButton.onclick = () => changeMode('rainbow')
 eraseButton.onclick = () => changeMode('erase')
-clearButton.onclick = () => refreshGrid(currentSize)
+resetButton.onclick = () => reset(currentSize)
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 // retrieve value from html slider on input and change
@@ -80,6 +80,13 @@ function setCurrentSize (newSize) {
 function refreshGrid (newSize) {
   grid.innerHTML = ''
   createGrid(newSize)
+}
+
+function reset (size) {
+  refreshGrid(size)
+  // reset color selector input field to defaults
+  currentColor = DEFAULT_COLOR
+  colorPicker.value = DEFAULT_COLOR
 }
 
 function changeMode (mode) {
