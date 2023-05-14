@@ -31,7 +31,6 @@ document.body.onmouseup = () => (mouseDown = false)
 sizeSlider.oninput = (e) => setCurrentSize(e.target.value)
 sizeSlider.onchange = (e) => refreshGrid(e.target.value)
 
-
 /* ___________________________________________________________________________________________ */
 
 // creates pixel grid to serve as Etch-A-Sketch drawing space
@@ -87,13 +86,34 @@ function reset (size) {
   // reset color selector input field to defaults
   currentColor = DEFAULT_COLOR
   colorPicker.value = DEFAULT_COLOR
+  changeMode(DEFAULT_MODE)
 }
 
 function changeMode (mode) {
+  activeButton(mode)
   currentMode = mode
+}
+
+function activeButton (mode) {
+  if (currentMode === 'color') {
+    colorBtn.classList.remove('active')
+  } else if (currentMode === 'rainbow') {
+    rainbowBtn.classList.remove('active')
+  } else if (currentMode === 'erase') {
+    eraseBtn.classList.remove('active')
+  }
+
+  if (mode === 'color') {
+    colorBtn.classList.add('active')
+  } else if (mode === 'rainbow') {
+    rainbowBtn.classList.add('active')
+  } else if (mode === 'erase') {
+    eraseBtn.classList.add('active')
+  }
 }
 
 window.onload = () => {
   createGrid(DEFAULT_SIZE)
   setCurrentSize(DEFAULT_SIZE)
+  activeButton(DEFAULT_MODE)
 }

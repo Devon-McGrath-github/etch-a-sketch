@@ -117,13 +117,18 @@ button {
   border-radius: 5px;
 }
 
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
 #grid-slider {
   margin-top: 5px;
 }
 
-button:hover,
-input[type='color']:hover {
-  transform: scale(1.05);
+.active {
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
 }
 
 /* grid styling */
