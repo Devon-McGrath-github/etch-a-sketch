@@ -32,7 +32,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  background-color: var(--primary-light);
 }
 ol, ul {
   list-style: none;
@@ -52,14 +51,19 @@ table {
 
 /* end of meyer css reset */
 
-:root {
-  box-sizing: border-box;
-  
+:root { 
   /* monokai color scheme ????? */
   --primary-dark: #333;
   --primary-light: #fbfbfd;
   --secondary-light: #fefefe;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* styles for easy sticky footer */
 html, body {
   height: 100%
@@ -69,11 +73,21 @@ body > footer {
   top: 100vh;
 }
 /* end of sticky footer styling */
+body {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-family: 'Roboto', sans-serif;
+}
 
 .header, footer {
   margin: 0 auto;
   text-align: center;
   padding: 2% 0;
+}
+
+.header {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
 .content {
@@ -87,17 +101,58 @@ body > footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+}
+
+button,
+#grid-slider {
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+}
+
+#grid-slider {
+  margin-top: 5px;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
 }
 
 /* grid styling */
 .grid {
   display: grid;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid-element {
   user-select: none;
   background-color: var(--secondary-light);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+.fa-github {
+  color: var(--primary-dark);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
 }

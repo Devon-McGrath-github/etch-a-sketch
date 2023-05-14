@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Etch-A-Sketch</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   
+  <script
+    src="https://kit.fontawesome.com/4c536a6bd5.js"
+    crossorigin="anonymous"
+  ></script>
+  
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <header class="header">
@@ -16,10 +25,10 @@
   <div class="content">
     <div class="options">
       <input id="colorPicker" type="color" value="#000" />
-      <button id="colorBtn">color</button>
-      <button id="rainbowBtn">rainbow</button>
-      <button id="eraseBtn">erase</button>
-      <button id="resetBtn">reset</button>
+      <button id="colorBtn">Color</button>
+      <button id="rainbowBtn">Rainbow</button>
+      <button id="eraseBtn">Erase</button>
+      <button id="resetBtn">Reset</button>
 
       <div class="grid-slider">
         <div id="sizeValue"></div>
@@ -28,14 +37,17 @@
       </div>
     </div>
 
-
     <div id="grid" class="grid"></div>
   </div>
 
 
 
-  <footer>
-    <p>A little project by <a href src="https://github.com/Devon-McGrath-github" >me</a></p>
+  <footer class="footer">
+    <p>A little project by me 
+      <a href="https://github.com/Devon-McGrath-github" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
   </footer>
 
   <script src="index.js"></script>
